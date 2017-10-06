@@ -1,6 +1,6 @@
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="jhoni.subnet" version="1.0.0">
-  <name>MesinHitung</name>
-  <description>Subnetting Kelas C.</description>
+  <name>Bayu</name>
+  <description>Kelas A.</description>
   <author href="http://todak-source.com" email="jhonipratama13@gmail.com.com">Jhoni Eka Putra</author>
   <content src="index.html"/>
   <preference name="DisallowOverscroll" value="true"/>
