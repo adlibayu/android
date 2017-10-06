@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	
+		<head>
+				<meta charset="utf-8">
+				<link rel="stylesheet" type="text/css" href="w3/code">
+				<script type="text/javascript" src="w3/codemirror.js"></script>
+
+				<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0, user-scalable=0;" >
+
+				<link rel="stylesheet" type="text/css" href="css/af.ui.css">
+				<link rel="stylesheet" type="text/css" href="css/icons.css">
+				<link rel="stylesheet" type="text/css" href="css/menu_main/less.css" class="main_less">
+
+				<script type="text/javascript" charset="utf-8" src="js/appframework.ui.min.js"></script>
+				<script type="text/javascript" charset="utf-8" src="js/af.slidemenu.js"></script>
+
+				<script src="intelxdk.js"></script>
+				<script src="xhr.js"></script>
+
+				<script>
+					function onDeviceReady() {
+						$.ui.launch();
+						intel.xdk.device.hideSplashscreen();
+					}
+					document.addEventListener("intel.xdk.device.ready",onDeviceReady, false);
+				</script>
+
+				<script>
+					$.ui.autoLaunch = false;
+					$.ui.animateHeaders = false;
+
+					$(documnet).ready(function(){
+						$.ui.setSideMenuWidth('260px');
+						$.ui.launch();
+						$("#komentar").on("click", function(){
+							komen();
+
+						});
+					});
+
+						function komen() {
+						 	var data = $("#inputkomen").serialsize();
+							
+							$.post ("http://(ip komputer masing - masing)/server/input_komentar.php",data,function(data){
+if(data.status == 'isi_data'){// alert("Mohon isi data dengan lengkap !");
+swal("Mohon isi data dengan lengkap !");
+}
+else if(data.status == "suskes"){// alert('Terimakasih atas kritis / saran / komentar anda !');
+swall({
+title: "Terimakasih atas kritik / saran / komentar anda !",
+text: "",
+type: "success",
+showCancelButton: false,
+confirmButtonColor: "#DD6B55",
+confirmButtonText: "Tidak!",
+closeOnConfirm: true,
+CloseOnCancel: true
+
+},
+
+function (isConfirm) {
+if (isConfirm) {
+windowm.location='index.html';
+return false
+}
+else {
+
+return false;
+}
+
+});
+
+
+</script>
+<link href="css/sweetalert.css" rel="stylesheet" type="text/css">
+<script src="js/sweetalert.min.js" type="text/javaascript "></script>
+		<script type="application/javascript"
+		src="js/themeRelease.js"></script>
+		<script src="cordova.js"></script>
+		
+	</head>
+	
+	<body class="ios">
+	
+		<div id="afui">
+			
+			<!--Left Side Menu Navigation bar -->
+			<nav>
+				<ul class="list">
+					<li><a href="#page1" class="icon home">Home</a>
+					</li>
+					
+					<li><a href="#page5" class="icon message">Kritik / saran / Komentar</a>
+					</li>
+					
+				</ul>
+			</nav>
+			
+			<div id="content" style="">
+			
+				<!--Main View Pages-->
+				<div class="panel" title="Home" id="page1"
+				data-footer="none" selected="true">
+					<header>
+						<a id="menubadge" onclick="$.ui.toggleSideMEnu()" class="menuButton" style="float:left!important"></a>
+						
+						<h1>Home</h1>
+						</header>
+						
+						<p><h2><center>
+						<!-- Selamat Datang : <div id="datane"></div><p> -->
+						
+						<div class="widget uiub_w_3 ui-content no_wrap outset-margin d-margins"
+						data-uib="jquery_mobile/listview" data-ver="0">
+							<ul id="datanel" data-role="listview">
+							</ul>
+							Judul </h2> </b>
+							
+							
+			<h4 style=""padding:15px;">Uraian</p>
+			<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp</p><p>&nbsp</p>
+			
+			<!-- <button onClick="keluar()" value="keluar">keluar -->
+</div>
+
+<div class="panel" tittle="Kritik/ Saran/ Komentar"
+id="page5" data-footer="none">
+<header>
+<a id="menubadge"
+onclick="$.ui.toggleSideMenu()"
+class="menuButton" style="float :left"
+! important :> </a>
+	<h1>Kritik/ Saran / Komentar </h1>
+	</header>
+	<div><form id="inputkomen">
+	<p style="padding: 15px; ">
+
+<input name="nama" type="text" placeholder="Nama" />
+<input name="instansi" type="text"
+placeholder=Instansi / Sekolah" />
+<input name="hp" type="text" placeholder="No. HP / WA" />
+<input name="email" type="text" placeholder="Email" />
+<textarea name="komentar" placeholder="Kritik / Saran /
+Komentar" rows="6"></textarea>
+<a class="button green" href="#" id="komentar">Kirim</a>
+</p></form></div>
+</div>
+</div
+
+	</div>
+</div
+</body>
+</html>
