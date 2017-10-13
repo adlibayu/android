@@ -42,7 +42,7 @@
 						function komen() {
 						 	var data = $("#inputkomen").serialsize();
 							
-							$.post ("http://(ip komputer masing - masing)/server/input_komentar.php",data,function(data){
+							$.post ("http://(192.168.1.101)/server/input_komentar.php",data,function(data){
 if(data.status == 'isi_data'){// alert("Mohon isi data dengan lengkap !");
 swal("Mohon isi data dengan lengkap !");
 }
